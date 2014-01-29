@@ -1,6 +1,6 @@
 *
 !MisfitT_total.nb
 !MisfitT_set.nb
-!src
+!src/*
 !.gitignore
 !README.md
