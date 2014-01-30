@@ -36,14 +36,17 @@ struct FixtureInterfaceCubBy
 		Wxxzz_bx = 0;
 		Wzxzx_bx = 0;
 		Wxzzx_bx = 0;
+
 		Wxxxx_bz = 0;
 		Wzzzz_bz = 0;
 		Wxzxz_bz = 0;
 		Wxxzz_bz = 0;
 		Wzxzx_bz = 0;
 		Wxzzx_bz = 0;
+
 		Wyxyx_by = 0.0134524;
 		Wyzyz_by = 0.00018947;
+
 		wxx = 0.0815926;
 		wyy = 0.130013;
 		wzz = 0.00298037;

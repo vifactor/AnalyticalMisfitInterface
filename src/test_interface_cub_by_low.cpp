@@ -12,7 +12,7 @@ struct FixtureInterfaceCubByLow
 {
 	FixtureInterfaceCubByLow()
     {
-		BOOST_TEST_MESSAGE("Setup FixtureInterfaceCub");
+		BOOST_TEST_MESSAGE("Setup FixtureInterfaceCubByLow");
 
 		/*dummy parameters used in the Mathematica file*/
 		double rho = 0.1;
@@ -35,14 +35,17 @@ struct FixtureInterfaceCubByLow
 		Wxxzz_bx = 0;
 		Wzxzx_bx = 0;
 		Wxzzx_bx = 0;
+
 		Wxxxx_bz = 0;
 		Wzzzz_bz = 0;
 		Wxzxz_bz = 0;
 		Wxxzz_bz = 0;
 		Wzxzx_bz = 0;
 		Wxzzx_bz = 0;
+
 		Wyxyx_by = 0.0157406;
 		Wyzyz_by = 0.0157406;
+
 		wxx = 0.0954713;
 		wyy = 0.152128;
 		wzz = 0.2476;
@@ -57,7 +60,7 @@ struct FixtureInterfaceCubByLow
 
     ~FixtureInterfaceCubByLow()
     {
-        BOOST_TEST_MESSAGE("Teardown FixtureInterfaceCub");
+        BOOST_TEST_MESSAGE("Teardown FixtureInterfaceCubByLow");
         if(interface)
         	delete interface;
         interface = NULL;
@@ -70,7 +73,7 @@ struct FixtureInterfaceCubByLow
     AnalyticalMisfitInterfaceCub * interface;
 };
 
-BOOST_FIXTURE_TEST_SUITE(meanDistorsions, FixtureInterfaceCubByLow)
+BOOST_FIXTURE_TEST_SUITE(TestsInterfaceLow, FixtureInterfaceCubByLow)
 
 BOOST_AUTO_TEST_CASE(Burgers_by_component_Wxxxx_bx_low)
 {

@@ -62,6 +62,42 @@ protected:
     double m_rho;
     mutable double xi, xi2, xi3, xi4, xi5, xi6, xi7, xi8;
     mutable double denom;
+
+    /*mean squared distortions below the interface*/
+    double BelowWxxxx_bx() const;
+    double BelowWzzzz_bx() const;
+    double BelowWxzxz_bx() const;
+    double BelowWxxzz_bx() const;
+    double BelowWzxzx_bx() const;
+    double BelowWxzzx_bx() const;
+
+    double BelowWyxyx_by() const;
+    double BelowWyzyz_by() const;
+
+    double BelowWxxxx_bz() const;
+    double BelowWzzzz_bz() const;
+    double BelowWxzxz_bz() const;
+    double BelowWxxzz_bz() const;
+    double BelowWzxzx_bz() const;
+    double BelowWxzzx_bz() const;
+
+    /*mean squared distortions above the interface*/
+    double AboveWxxxx_bx() const;
+    double AboveWzzzz_bx() const;
+    double AboveWxzxz_bx() const;
+    double AboveWxxzz_bx() const;
+    double AboveWzxzx_bx() const;
+    double AboveWxzzx_bx() const;
+
+    double AboveWyxyx_by() const;
+    double AboveWyzyz_by() const;
+
+    double AboveWxxxx_bz() const;
+    double AboveWzzzz_bz() const;
+    double AboveWxzxz_bz() const;
+    double AboveWxxzz_bz() const;
+    double AboveWzxzx_bz() const;
+    double AboveWxzzx_bz() const;
 };
 
 class AnalyticalMisfitInterfaceCub : public AnalyticalMisfitInterfaceBase

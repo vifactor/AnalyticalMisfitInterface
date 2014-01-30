@@ -13,7 +13,7 @@ struct FixtureInterfaceCubBz
 {
 	FixtureInterfaceCubBz()
     {
-		BOOST_TEST_MESSAGE("Setup FixtureInterfaceCub");
+		BOOST_TEST_MESSAGE("Setup FixtureInterfaceBzCub");
 
 		/*dummy parameters used in Mathematica file*/
 		double rho = 0.1;
@@ -59,7 +59,7 @@ struct FixtureInterfaceCubBz
 
     ~FixtureInterfaceCubBz()
     {
-        BOOST_TEST_MESSAGE("Teardown FixtureInterfaceCub");
+        BOOST_TEST_MESSAGE("Teardown FixtureInterfaceBzCub");
         if(interface)
         	delete interface;
         interface = NULL;
