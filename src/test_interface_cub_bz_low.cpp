@@ -8,9 +8,9 @@
 #include <boost/test/unit_test.hpp>
 #include "AnalyticalMisfitInterfaces.h"
 
-struct FixtureInterfaceCubByLow
+struct FixtureInterfaceCubBzLow
 {
-	FixtureInterfaceCubByLow()
+	FixtureInterfaceCubBzLow()
     {
 		BOOST_TEST_MESSAGE("Setup FixtureInterfaceCubLow");
 
@@ -58,7 +58,7 @@ struct FixtureInterfaceCubByLow
 		interface->init(z);
     }
 
-    ~FixtureInterfaceCubByLow()
+    ~FixtureInterfaceCubBzLow()
     {
         BOOST_TEST_MESSAGE("Teardown FixtureInterfaceCub");
         if(interface)
@@ -73,7 +73,7 @@ struct FixtureInterfaceCubByLow
     AnalyticalMisfitInterfaceCub * interface;
 };
 
-BOOST_FIXTURE_TEST_SUITE(TestsInterfaceLow, FixtureInterfaceCubByLow)
+BOOST_FIXTURE_TEST_SUITE(TestsInterfaceLow, FixtureInterfaceCubBzLow)
 
 BOOST_AUTO_TEST_CASE(Burgers_bz_component_Wxxxx_bx_low)
 {

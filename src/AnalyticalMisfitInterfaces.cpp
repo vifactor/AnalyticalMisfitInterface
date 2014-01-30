@@ -398,10 +398,10 @@ double AnalyticalMisfitInterfaceBase::BelowWzzzz_bz() const
 {
 	static double result;
 
-	result = -bz2
-			* (-2 * xi * gsl_pow_2(1 + xi) * (1 + 3 * xi)
-					+ 4 * alpha * xi * gsl_pow_2(1 + xi) * (1 + 3 * xi)
-					+ alpha2 * (-2 - 9 * xi - 15 * xi2 - 5 * xi3 + 15 * xi4))
+	result = bz2
+			* (2 * xi * gsl_pow_2(1 + xi) * (1 + 3 * xi)
+					+ alpha2 * xi * (1 + 5 * xi + xi2 + 9 * xi3)
+					+ 2 * alpha * (-1 - 5 * xi - 10 * xi2 - 3 * xi3 + 3 * xi4))
 			/ (denom * xi3);
 
 	return result;
@@ -424,10 +424,10 @@ double AnalyticalMisfitInterfaceBase::BelowWxxzz_bz() const
 {
 	static double result;
 
-	result = bz2
-			* (2 * xi * gsl_pow_2(1 + xi) * (1 + 3 * xi)
-					+ alpha2 * xi * (1 + 5 * xi + xi2 + 9 * xi3)
-					+ 2 * alpha * (-1 - 5 * xi - 10 * xi2 - 3 * xi3 + 3 * xi4))
+	result = -bz2
+			* (-2 * xi * gsl_pow_2(1 + xi) * (1 + 3 * xi)
+					+ 4 * alpha * xi * gsl_pow_2(1 + xi) * (1 + 3 * xi)
+					+ alpha2 * (-2 - 9 * xi - 15 * xi2 - 5 * xi3 + 15 * xi4))
 			/ (denom * xi3);
 
 	return result;
@@ -872,7 +872,7 @@ double AnalyticalMisfitInterfaceHex::wzz() const
 
 	if (bx2 != 0.0)
 	{
-		result_bx = 3.0 / 2 * Qx2 * Wxzxz_bx() + 3.0 / 2 * Qy2 * Wxzxz_bx()
+		result_bx = 3.0 / 2 * Wxzxz_bx() * (Qx2 + Qy2)
 				+ 3 * Qz2 * Wzzzz_bx();
 	}
 	else
@@ -880,7 +880,7 @@ double AnalyticalMisfitInterfaceHex::wzz() const
 
 	if (by2 != 0.0)
 	{
-		result_by = 3.0 / 2 * Qx2 * Wyzyz_by() + 3.0 / 2 * Qy2 * Wyzyz_by();
+		result_by = 3.0 / 2 * Wyzyz_by() * (Qx2 + Qy2);
 	}
 	else
 		result_by = 0.0;
