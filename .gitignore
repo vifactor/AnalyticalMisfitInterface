@@ -1,7 +1,1 @@
-*
-!MisfitT_total.nb
-!MisfitT_set.nb
-!MisfitT_set_low.nb
-!src/*
-!.gitignore
-!README.md
+build/
