@@ -4,6 +4,8 @@ project(AnalyticalMisfitInterfaces)
 
 #tests
 add_subdirectory (tests)
+enable_testing ()
+add_test (NAME MyTest COMMAND Test)
 
 #Check if important libraries are available.
 

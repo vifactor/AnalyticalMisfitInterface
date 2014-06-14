@@ -16,9 +16,9 @@ include_directories(${CMAKE_BINARY_DIR}/src/gmock_project/gtest/include/)
 
 link_directories(${CMAKE_BINARY_DIR}/src/gmock_project-build)
 
-set(EXEC Test)
+set(TEST_EXECUTABLE Test)
 file(GLOB CPP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
-add_executable(${EXEC} ${CPP_SOURCES})
+add_executable(${TEST_EXECUTABLE} ${CPP_SOURCES})
 
-add_dependencies(${EXEC} gmock_project)
-target_link_libraries(${EXEC} gmock pthread)
+add_dependencies(${TEST_EXECUTABLE} gmock_project)
+target_link_libraries(${TEST_EXECUTABLE} gmock pthread)
