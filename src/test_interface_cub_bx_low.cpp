@@ -43,6 +43,7 @@ struct FixtureInterfaceCubBxLow
 		Wxzzx_bz = 0.0;
 		Wyxyx_by = 0.0;
 		Wyzyz_by = 0.0;
+		
 		wxx = 0.311996;
 		wyy = 0.284784;
 		wzz = 0.620729;
