@@ -14,8 +14,9 @@
 class AnalyticalMisfitInterfaceBase
 {
 public:
-	AnalyticalMisfitInterfaceBase(double rho, double bx, double by, double bz, double Qx, double Qy, double Qz, double nu,
-		 double d);
+	AnalyticalMisfitInterfaceBase(double rho, double bx, double by, double bz,
+	                             double Qx, double Qy, double Qz,
+	                             double nu, double d);
 	virtual ~AnalyticalMisfitInterfaceBase();
 
 	/*
@@ -103,8 +104,9 @@ protected:
 class AnalyticalMisfitInterfaceCub : public AnalyticalMisfitInterfaceBase
 {
 public:
-	AnalyticalMisfitInterfaceCub(double rho, double bx, double by, double bz, double Qx, double Qy, double Qz, double phi, double nu,
-		 double d);
+	AnalyticalMisfitInterfaceCub(double rho, double bx, double by, double bz,
+	                             double Qx, double Qy, double Qz,
+	                             double phi, double nu, double d);
 	virtual ~AnalyticalMisfitInterfaceCub() {}
 
 	/* coefficients wij are calculated

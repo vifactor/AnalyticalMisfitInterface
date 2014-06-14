@@ -1,7 +1,26 @@
 #include "AnalyticalMisfitInterfaces.h"
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
 namespace {
+
+class MockAnalyticalMisfitInterfaceBase : public AnalyticalMisfitInterfaceBase {
+public:
+    MockAnalyticalMisfitInterfaceBase(double rho, double bx, double by, double bz,
+	                             double Qx, double Qy, double Qz,
+	                             double nu, double d) :
+	                             AnalyticalMisfitInterfaceBase(rho, bx, by, bz,
+	                             Qx, Qy, Qz,
+	                             nu, d) {}
+
+    //mocking pure virtual methods
+    MOCK_CONST_METHOD0(wxx, double());
+    MOCK_CONST_METHOD0(wyy, double());
+    MOCK_CONST_METHOD0(wzz, double());
+    MOCK_CONST_METHOD0(wxy, double());
+    MOCK_CONST_METHOD0(wxz, double());
+    MOCK_CONST_METHOD0(wyz, double());
+};
 
 // The fixture for testing class AnalyticalMisfitInterfaceBase.
 class AnalyticalMisfitInterfaceBaseTest : public ::testing::Test {
@@ -29,7 +48,7 @@ class AnalyticalMisfitInterfaceBaseTest : public ::testing::Test {
 		double Qx = 2.2;
 		double Qy = 3.3;
 		double Qz = 4.4;
-		double phi = M_PI / 9;
+		
 		double nu = 1.0 / 3;
 		double d = 12;
 		double z = 2;
@@ -49,15 +68,9 @@ class AnalyticalMisfitInterfaceBaseTest : public ::testing::Test {
 		Wxzzx_bz = 0;
 		Wyxyx_by = 0;
 		Wyzyz_by = 0;
-		wxx = 0.195903;
-		wyy = 0.173499;
-		wzz = 0.150516;
-		wxy = 0.0187993;
-		wxz = -0.175359;
-		wyz = -0.263038;
 
-		interface = new AnalyticalMisfitInterfaceCub(rho, bx, by, bz, Qx, Qy,
-				Qz, phi, nu, d);
+		interface = new MockAnalyticalMisfitInterfaceBase(rho, bx, by, bz, Qx, Qy,
+				Qz, nu, d);
 		interface->init(z);
   }
 
@@ -73,15 +86,79 @@ class AnalyticalMisfitInterfaceBaseTest : public ::testing::Test {
     double Wxxxx_bx, Wzzzz_bx, Wxzxz_bx, Wxxzz_bx, Wzxzx_bx, Wxzzx_bx;
     double Wxxxx_bz, Wzzzz_bz, Wxzxz_bz, Wxxzz_bz, Wzxzx_bz, Wxzzx_bz;
     double Wyxyx_by, Wyzyz_by;
-    double wxx, wyy, wzz, wxy, wxz, wyz;
 
-    AnalyticalMisfitInterfaceCub * interface;
+    MockAnalyticalMisfitInterfaceBase * interface;
 };
 
-// Tests that the Foo::Bar() method does Abc.
-TEST_F(AnalyticalMisfitInterfaceBaseTest, DummyTest) 
+// Tests Wijkl methods
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wxxxx_bx) 
 {
-  EXPECT_EQ(1 + 1, 2);
+    EXPECT_NEAR(interface->Wxxxx_bx(), Wxxxx_bx, 1e-3);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wzzzz_bx)
+{
+	EXPECT_NEAR(interface->Wzzzz_bx(), Wzzzz_bx, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wxzxz_bx)
+{
+	EXPECT_NEAR(interface->Wxzxz_bx(), Wxzxz_bx, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wxxzz_bx)
+{
+	EXPECT_NEAR(interface->Wxxzz_bx(), Wxxzz_bx, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wzxzx_bx)
+{
+	EXPECT_NEAR(interface->Wzxzx_bx(), Wzxzx_bx, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wxzzx_bx)
+{
+	EXPECT_NEAR(interface->Wxzzx_bx(), Wxzzx_bx, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wxxxx_bz)
+{
+	EXPECT_NEAR(interface->Wxxxx_bz(), Wxxxx_bz, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wzzzz_bz)
+{
+	EXPECT_NEAR(interface->Wzzzz_bz(), Wzzzz_bz, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wxzxz_bz)
+{
+	EXPECT_NEAR(interface->Wxzxz_bz(), Wxzxz_bz, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wxxzz_bz)
+{
+	EXPECT_NEAR(interface->Wxxzz_bz(), Wxxzz_bz, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wzxzx_bz)
+{
+	EXPECT_NEAR(interface->Wzxzx_bz(), Wzxzx_bz, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wxzzx_bz)
+{
+	EXPECT_NEAR(interface->Wxzzx_bz(), Wxzzx_bz, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wyxyx_by)
+{
+	EXPECT_NEAR(interface->Wyxyx_by(), Wyxyx_by, 1e-2);
+}
+
+TEST_F(AnalyticalMisfitInterfaceBaseTest, Wyzyz_by)
+{
+	EXPECT_NEAR(interface->Wyzyz_by(), Wyzyz_by, 1e-2);
 }
 
 }  // namespace
