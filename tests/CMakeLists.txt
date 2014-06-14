@@ -21,4 +21,8 @@ file(GLOB CPP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 add_executable(${TEST_EXECUTABLE} ${CPP_SOURCES})
 
 add_dependencies(${TEST_EXECUTABLE} gmock_project)
-target_link_libraries(${TEST_EXECUTABLE} gmock pthread)
+target_link_libraries(${TEST_EXECUTABLE} 
+            interface 
+            gmock pthread
+            ${GSL_LIBRARIES}
+            ${BLAS_LIBRARIES})
