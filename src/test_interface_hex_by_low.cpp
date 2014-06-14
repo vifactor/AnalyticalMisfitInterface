@@ -29,10 +29,10 @@ struct FixtureInterfaceHexByLow
 
 
 		/**values obtained in the Mathematica*/
-		wxx = 0.0954713;
-		wyy = 0.152128;
-		wzz = 0.2476;
-		wxy = -0.0475409;
+		wxx = 0.221411;
+		wyy = 0.149988;
+		wzz = 0.371399;
+		wxy = -0.171415;
 		wxz = 0;
 		wyz = 0;
         interface = new AnalyticalMisfitInterfaceHex(rho, bx, by, bz, Qx, Qy,
