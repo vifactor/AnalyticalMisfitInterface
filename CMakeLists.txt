@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 2.8)
 
 project(AnalyticalMisfitInterfaces)
 
+#tests
+add_subdirectory (tests)
+
 #Check if important libraries are available.
 
 #Gnu Scientific library
