@@ -21,4 +21,8 @@ add_test (NAME MyTest COMMAND Test)
 #library
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 file(GLOB CPP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
-add_library (interface ${CPP_SOURCES})
+file(GLOB H_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h")
+add_library (interface STATIC ${CPP_SOURCES})
+
+install(FILES ${H_SOURCES} 
+        DESTINATION ${CMAKE_BINARY_DIR})
