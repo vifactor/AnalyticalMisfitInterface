@@ -1,11 +1,11 @@
 //============================================================================
-// Name        : test_interface_cub_bz.cpp
+// Name        : test_interface_hex_by.cpp
 // Author      : Viktor Kopp
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Tests for cubic interface class with bz component dislocations
+// Description : Tests for hexagonal interface class with by component dislocations
 //============================================================================
-#include "AnalyticalMisfitInterfaces.h"
+#include "AnalyticalMisfitInterfaceHex.h"
 #include <gtest/gtest.h>
 
 namespace {

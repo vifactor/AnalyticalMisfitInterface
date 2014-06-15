@@ -1,4 +1,4 @@
-#include "AnalyticalMisfitInterfaces.h"
+#include "AnalyticalMisfitInterfaceBase.h"
 #include <gmock/gmock.h>
 
 namespace {

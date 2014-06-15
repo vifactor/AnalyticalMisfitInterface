@@ -5,7 +5,7 @@
 // Copyright   : Your copyright notice
 // Description : Tests for cubic interface class with by component dislocations
 //============================================================================
-#include "AnalyticalMisfitInterfaces.h"
+#include "AnalyticalMisfitInterfaceCub.h"
 #include <gtest/gtest.h>
 
 namespace {
