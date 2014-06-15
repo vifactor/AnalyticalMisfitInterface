@@ -4,14 +4,14 @@ namespace {
 
 
 // The fixture for testing class AnalyticalMisfitInterfaceBase when z > d
-class AnalyticalMisfitInterfaceBaseBelowTest : public ::testing::Test {
+class AnalyticalMisfitInterfaceBaseBelowBxTest : public ::testing::Test {
  protected:
 
-    AnalyticalMisfitInterfaceBaseBelowTest() {
+    AnalyticalMisfitInterfaceBaseBelowBxTest() {
     // You can do set-up work for each test here.
   }
 
-    virtual ~AnalyticalMisfitInterfaceBaseBelowTest() {
+    virtual ~AnalyticalMisfitInterfaceBaseBelowBxTest() {
     // You can do clean-up work that doesn't throw exceptions here.
   }
 
@@ -73,72 +73,72 @@ class AnalyticalMisfitInterfaceBaseBelowTest : public ::testing::Test {
 };
 
 // Tests Wijkl methods when z > d
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wxxxx_bx) 
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wxxxx_bx) 
 {
     EXPECT_NEAR(interface->Wxxxx_bx(), Wxxxx_bx, 1e-3);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wzzzz_bx)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wzzzz_bx)
 {
 	EXPECT_NEAR(interface->Wzzzz_bx(), Wzzzz_bx, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wxzxz_bx)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wxzxz_bx)
 {
 	EXPECT_NEAR(interface->Wxzxz_bx(), Wxzxz_bx, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wxxzz_bx)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wxxzz_bx)
 {
 	EXPECT_NEAR(interface->Wxxzz_bx(), Wxxzz_bx, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wzxzx_bx)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wzxzx_bx)
 {
 	EXPECT_NEAR(interface->Wzxzx_bx(), Wzxzx_bx, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wxzzx_bx)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wxzzx_bx)
 {
 	EXPECT_NEAR(interface->Wxzzx_bx(), Wxzzx_bx, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wxxxx_bz)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wxxxx_bz)
 {
 	EXPECT_NEAR(interface->Wxxxx_bz(), Wxxxx_bz, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wzzzz_bz)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wzzzz_bz)
 {
 	EXPECT_NEAR(interface->Wzzzz_bz(), Wzzzz_bz, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wxzxz_bz)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wxzxz_bz)
 {
 	EXPECT_NEAR(interface->Wxzxz_bz(), Wxzxz_bz, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wxxzz_bz)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wxxzz_bz)
 {
 	EXPECT_NEAR(interface->Wxxzz_bz(), Wxxzz_bz, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wzxzx_bz)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wzxzx_bz)
 {
 	EXPECT_NEAR(interface->Wzxzx_bz(), Wzxzx_bz, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wxzzx_bz)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wxzzx_bz)
 {
 	EXPECT_NEAR(interface->Wxzzx_bz(), Wxzzx_bz, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wyxyx_by)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wyxyx_by)
 {
 	EXPECT_NEAR(interface->Wyxyx_by(), Wyxyx_by, 1e-2);
 }
 
-TEST_F(AnalyticalMisfitInterfaceBaseBelowTest, Wyzyz_by)
+TEST_F(AnalyticalMisfitInterfaceBaseBelowBxTest, Wyzyz_by)
 {
 	EXPECT_NEAR(interface->Wyzyz_by(), Wyzyz_by, 1e-2);
 }
