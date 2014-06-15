@@ -10,6 +10,7 @@ ExternalProject_Add(
 )
 
 #compile project itself
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories (${AnalyticalMisfitInterfaces_SOURCE_DIR}/src)
 include_directories(${CMAKE_BINARY_DIR}/src/gmock_project/include/)
 include_directories(${CMAKE_BINARY_DIR}/src/gmock_project/gtest/include/)

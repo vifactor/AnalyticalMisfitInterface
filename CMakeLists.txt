@@ -2,11 +2,6 @@ cmake_minimum_required(VERSION 2.8)
 
 project(AnalyticalMisfitInterfaces)
 
-#tests
-add_subdirectory (tests)
-enable_testing ()
-add_test (NAME MyTest COMMAND Test)
-
 #Check if important libraries are available.
 
 #Gnu Scientific library
@@ -21,6 +16,12 @@ find_package(BLAS REQUIRED)
 #BOOST test library
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
+#tests
+add_subdirectory (tests)
+enable_testing ()
+add_test (NAME MyTest COMMAND Test)
+
+#library
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 file(GLOB CPP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 set(EXEC_NAME AnalyticalMisfitInterfaces_test)
@@ -33,3 +34,4 @@ target_link_libraries(${EXEC_NAME}
                       ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}
                       ${GSL_LIBRARIES}
                       ${BLAS_LIBRARIES})
+                      
