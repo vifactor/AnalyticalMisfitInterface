@@ -13,11 +13,6 @@ find_package(GSL REQUIRED)
 #BLAS
 find_package(BLAS REQUIRED)
 
-#tests
-add_subdirectory (tests)
-enable_testing ()
-add_test (NAME MyTest COMMAND Test)
-
 #library
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 file(GLOB CPP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
@@ -26,3 +21,13 @@ add_library (interface STATIC ${CPP_SOURCES})
 
 install(FILES ${H_SOURCES} 
         DESTINATION ${CMAKE_BINARY_DIR})
+        
+#building of tests is optional
+IF (BUILD_TESTING)
+    add_subdirectory (tests)
+    enable_testing ()
+
+    add_test (NAME MyTest COMMAND Test)
+    set_tests_properties (MyTest
+                          PROPERTIES PASS_REGULAR_EXPRESSION "Passed")
+ENDIF(BUILD_TESTING)
